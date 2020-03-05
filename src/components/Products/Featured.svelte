@@ -4,11 +4,11 @@
   import products from '../../stores/defaultProducts';
   import Product from './Product.svelte';
   import Loading from '../Loading.svelte';
-  $:featured = $products.filter(item => item.featured === true )
+  $: featured = $products.filter(item => item.featured === true );
 
 </script>
 
-{#if $featured.length === 0}
+{#if featured.length === 0}
   <Loading />
 {:else}
   <section class="section">
