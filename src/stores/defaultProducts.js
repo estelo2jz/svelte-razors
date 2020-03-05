@@ -9,7 +9,7 @@ const store = writable(flattenProducts([...localProducts]));
 
 function flattenProducts(data) {
   return data.map(item => {
-    let image = item.image.utl;
+    let image = item.image.url;
     return {...item,image};
   })
 }
