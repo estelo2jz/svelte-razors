@@ -1,7 +1,7 @@
 <script>
   export let id;
   // export let location;
-
+  // global store
   import products from '../stores/defaultProducts';
   import Loading from '../components/Loading.svelte';
   import { link } from 'svelte-routing';
@@ -9,12 +9,17 @@
   $: product = $products.find(item => item.id === parseInt(id))
 </script>
 
+<svelte:head>
+  <title>{!product ? "single product" : product.title}</title>
+</svelte:head>
 {#if !product}
   <Loading />
 {:else}
   <section class="single-product">
     <!-- back to product -->
-    <a href="/products" use:link class="btn btn-primary">back to products</a>
+    <a href="/products" use:link class="btn btn-primary">
+      back to products
+    </a>
     <!-- single product container -->
     <div class="single-product-container">
       <article class="single-product-image">
