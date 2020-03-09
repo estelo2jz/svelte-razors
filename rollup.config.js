@@ -50,6 +50,8 @@ export default {
 		production && terser()
 	],
 	watch: {
-		clearScreen: false
+		clearScreen: false,
+		// Add this line to your config
+		include: "public/global.css"
 	}
 };
